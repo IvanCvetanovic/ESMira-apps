@@ -33,6 +33,7 @@ class Input internal constructor( ) {
 		bluetooth_devices,
 		compass,
 		countdown,
+		creativity,
 		date,
 		datetime,
 		duration,
@@ -49,6 +50,7 @@ class Input internal constructor( ) {
 		photo,
 		record_audio,
 		share,
+		stroop,
 		text_input,
 		time,
 		va_scale,
@@ -82,7 +84,15 @@ class Input internal constructor( ) {
     var customStart: Int = 0
 	
 	var forceInt: Boolean = false
-	
+	var stroopColors: String = "red,blue,green,yellow"
+	var stroopTrials: Int = 10
+	var stroopShowWord: Boolean = true
+	var stroopInstructions: String = "Select the color of the ink, not what the word says."
+
+	var creativityDuration: Int = 10
+	var creativityWords: String = "Toothpaste,Foam Toothbrush,Wine bottle,Ping pong ball,Headband,Mirror,Sock,Rope,Suitcase,Umbrella,Paintbrush,Band-aid,Trash can,Spoon,Ruler,Lamp,Tie,Toilet paper,Coat hook,Car tire,Bathtub,Banana peel,Flower vase,Iron,Paper clip,Lighter,Hairdryer,Frisbee,Fork,Watering can,Bell,Belt,Horseshoe,Hat"
+	var creativityInstructions: String = "Think of as many uses as you can for the displayed word."
+
 	val desc: String
 		get() {
 			return if(required && text.isNotEmpty()) "$text*" else text
